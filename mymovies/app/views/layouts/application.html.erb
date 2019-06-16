@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if user_signed_in? %>
+      <h2>Welcome <%= current_user.email %></h2>
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <%= link_to 'Change password', edit_user_registration_path %> 
+        <p><%= link_to 'My Movies', movies_path %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

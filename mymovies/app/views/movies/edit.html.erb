@@ -1,0 +1,17 @@
+<h1>Movies#edit</h1>
+<p>Find me in app/views/movies/edit.html.erb</p>
+<%= form_for @movie, url: {action: "update"} do |f| %>
+  <%= f.label :title %>  
+  <%= f.text_field :title %>
+
+  <%= f.label :description %>  
+  <%= f.text_field :description %>
+
+  <%= f.label :director %>  
+  <%= f.text_field :director %>
+
+  <%= f.label :year %>  
+  <%= f.text_field :year %>
+
+  <%= f.submit "Save" %>
+<% end %>
