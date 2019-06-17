@@ -21,9 +21,5 @@
   <%= @movie.year %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @movie.user.email %>
-</p>
 
-<%= link_to 'Edit', edit_movie_path(@movie) %>
+<%= link_to 'Add to watchlist', user_movies_new_path(@movie) %>

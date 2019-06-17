@@ -1,0 +1,22 @@
+<h1>UserMovies#index</h1>
+<p>Find me in app/views/user_movies/index.html.erb</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Movie</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_movies.each do |user_movie| %>
+      <tr>
+        <td><%= link_to movie_path(@user_movie.movie_id) %></td>
+        <td><%= user_movie.status %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>

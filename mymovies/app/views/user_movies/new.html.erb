@@ -1,0 +1,7 @@
+<h1>UserMovies#new</h1>
+<p>Find me in app/views/user_movies/new.html.erb</p>
+
+<%= form_for @user_movie, url: {action: "create"} do |f| %>
+    <%= f.select :status, options_for_select([['Watched'], ['To be watched'], ['Favorite']]) %>
+    <%= f.submit "Save" %>
+<% end %>
