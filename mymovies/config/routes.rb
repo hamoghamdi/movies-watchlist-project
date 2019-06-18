@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  get 'user_movies/index',  to: "user_movies#index", as: "user_movies"
-  # get 'user_movies/show',  to: "user_movies#show", as: "user_movie"
-  get 'user_movies/new/:movie_id',  to: "user_movies#new", as: "user_movies_new"
-  post 'user_movies/create/:movie_id', to: "user_movies#create"
-  get 'user_movies/edit/:id',  to: "user_movies#edit", as: "edit_user_movie"
-  patch 'user_movies/update/:id',  to: "user_movies#update"
-  delete 'user_movies/destroy/:id', to: "user_movies#destroy"
+  get 'user_movies/',  to: "user_movies#index", as: "user_movies"
+  # get 'user_movies/:id',  to: "user_movies#show", as: "user_movie"
+  get 'user_movies/:movie_id/new',  to: "user_movies#new", as: "user_movies_new"
+  post 'user_movies/:movie_id', to: "user_movies#create"
+  get 'user_movies/:id/edit',  to: "user_movies#edit", as: "edit_user_movie"
+  patch 'user_movies/:id',  to: "user_movies#update"
+  delete 'user_movies/:id', to: "user_movies#destroy", as: "user_movie"
   # get 'movies/index', to: "movies#index", as: "movies"
   # get 'movies/new'
   # get 'movies/show'

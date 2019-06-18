@@ -1,7 +1,11 @@
 <h1>UserMovies#new</h1>
 <p>Find me in app/views/user_movies/new.html.erb</p>
 
+<h3><%= @user_movie.movie.title %> </h3>
 <%= form_for @user_movie, url: {action: "create"} do |f| %>
+    <%= f.hidden_field :movie_id, value: @user_movie.movie.id %>
+    <%= f.label :status %>
     <%= f.select :status, options_for_select([['Watched'], ['To be watched'], ['Favorite']]) %>
     <%= f.submit "Save" %>
 <% end %>
+<%= link_to 'Back', movie_path(@user_movie.movie_id) %>
