@@ -1,29 +1,45 @@
 <div class="container">
 
+    <div class="row">
+        <div class="col-9">
+            <% if !user_signed_in? %>
+                <h2>Welcome to Movies Watchlist</h2>
+            <% end %>
 
-<div class="row">
-    <div class="col-9">
-        <% if !user_signed_in? %>
-            <h2>Welcome to Movies Watchlist</h2>
-        <% end %>
-        
-        <h4>Make your own movies watchlist!<br />
-        Track movies you've watched and loved, and those you're plannig to enjoy watching some time soon</h4>
+            <h4>Make your own movies watchlist!<br />
+            Track movies you've watched and loved, and those you're plannig to enjoy watching some time soon</h4>
+        </div>
+
+        <div class="signlinks col-3">
+            <% if !user_signed_in? %>
+                <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign in', new_user_session_path %></button>
+                <br />
+                <br />
+                <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign up', new_user_registration_path %></button>
+            <% else %>
+                <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></button>
+                <br />
+                <br />
+                <button type="button" class="btn btn-outline-primary"><%= link_to 'Change password', edit_user_registration_path %></button>
+            <% end %>
+        </div>
     </div>
 
-    <div class="signlinks col-3">
-        <% if !user_signed_in? %>
-            <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign in', new_user_session_path %></button>
-            <br />
-            <br />
-            <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign up', new_user_registration_path %></button>
-        <% else %>
-            <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></button>
-            <br />
-            <br />
-            <button type="button" class="btn btn-outline-primary"><%= link_to 'Change password', edit_user_registration_path %></button>
-        <% end %>
+    <div class="row mq">
+        <div class="col-xs-12 col-md-6 col-md-offset-3 card card-style">
+            <div class="dark-primary"></div>
+                <div class="title-bar">
+                <h1><span class="movie-title"></span> <span class="movie-year"></span></h1></div>
+                <div class="youtube-iframe"></div>
+                <blockquote><span class="quote-actual"></span>
+                <footer><cite class="info-string"><span class="actor-name"></span> portraying <span class="character-name"></span>.</cite></footer>
+                </blockquote>
+                <div class="btn-bar">
+                <button class="new-quote">New Quote</button>
+                <button class="tweet">Tweet</button>
+            </div>
+        </div>
     </div>
-</div>
+
 </div>
 
