@@ -1,7 +1,29 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="container">
 
-<% if !user_signed_in? %>
-    <%= link_to 'Sign in', new_user_session_path %>
-    <%= link_to 'Sign up', new_user_registration_path %>
-<% end %>
+
+<div class="row">
+    <div class="col-9">
+        <% if !user_signed_in? %>
+            <h2>Welcome to Movies Watchlist</h2>
+        <% end %>
+        
+        <h4>Make your own movies watchlist!<br />
+        Track movies you've watched and loved, and those you're plannig to enjoy watching some time soon</h4>
+    </div>
+
+    <div class="signlinks col-3">
+        <% if !user_signed_in? %>
+            <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign in', new_user_session_path %></button>
+            <br />
+            <br />
+            <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign up', new_user_registration_path %></button>
+        <% else %>
+            <button type="button" class="btn btn-outline-primary"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></button>
+            <br />
+            <br />
+            <button type="button" class="btn btn-outline-primary"><%= link_to 'Change password', edit_user_registration_path %></button>
+        <% end %>
+    </div>
+</div>
+</div>
+

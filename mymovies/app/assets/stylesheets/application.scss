@@ -1,0 +1,65 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+body{
+    background-color:#eafafa;
+    font-family: 'Playfair Display', serif;
+    color: #3d2929;
+}
+.home.index {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(https://images.pexels.com/photos/2990/vintage-old-film.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    background-repeat: round;
+
+    
+    h4 {
+        margin-top:16%;
+        // color: #ffffb3;
+        // color: #ffc536;
+        color: #996600;
+        font-weight: bold;
+        // background:rgba(214, 245, 245, 0.6);
+        background: rgba(214, 245, 245, 0.8);
+        padding: 7%;
+    }
+    .signlinks {
+        margin-bottom: 3%;
+        .btn {
+        background: rgba(214, 245, 245, 0.2);
+        float: right;
+        }
+    }
+}
+
+.movies.index table {
+    height: 100vh;
+    width: 100vw;
+}
+.nav-tabs{
+    margin-left: 2px;
+    margin-top: -40px;
+    margin-bottom: 2%;
+    border-bottom: 2px solid #3d2929;
+    //  #dee2e6;
+}
+span {
+   float: right;
+}

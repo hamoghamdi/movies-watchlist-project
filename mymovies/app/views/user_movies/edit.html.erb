@@ -1,10 +1,8 @@
-<h1>UserMovies#edit</h1>
-<p>Find me in app/views/user_movies/edit.html.erb</p>
+<h1><%= @user_movie.movie.title %> </h1>
 
-<h3><%= @user_movie.movie.title %> </h3>
 <%= form_for @user_movie, url: {action: "update"} do |f| %>
      <%= f.label :status %>
-    <%= f.select :status, options_for_select([['Watched', 'Watched'], ['To be watched', 'To be watched'], ['Favorite', 'Favorite']], selected: @user_movie.status ) %>
+    <%= f.select :status, options_for_select([['Watched', 'Watched'], ['To be watched', 'To be watched'], ['Favorite', 'Favorite']], selected: @user_movie.status) %>
     <%= f.submit "Save" %>
 <% end %>
-<%= link_to 'Back to movie's watchlist', user_movies_path %>
+<button type="button" class="btn btn-outline-secondary btn-light"><%= link_to 'Back to watchlist', user_movies_path %></button>

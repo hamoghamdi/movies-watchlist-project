@@ -9,18 +9,36 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
+  <body class="<%= controller_name %> <%= action_name %>">
+    
+    <p class="notice"></p>
     <p class="alert"><%= alert %></p>
-    <% if user_signed_in? %>
-      <h2>Welcome <%= current_user.email %></h2>
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-        <%= link_to 'Change password', edit_user_registration_path %>
-        <p><%= link_to 'Watchlist', user_movies_path %></p>
-    <% end %> 
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <p class="nav-link"><%= link_to 'Home', home_path %></p>
+  </li>
+  <li class="nav-item">
+    <p class="nav-link"><%= link_to 'Movies', movies_path %></p>
+  </li>
 
-    <p><%= link_to 'Movies', movies_path %></p>
-    <p><%= link_to 'Home', home_path %></p>
-    <%= yield %>
+  <% if user_signed_in? %>
+  <li class="nav-item">
+    <p class="nav-link" ><%= link_to 'Watchlist', user_movies_path %></p>
+  </li>
+  <li class="nav-item justify-content-end"> 
+    <span class="navbar-text"><%= current_user.email %></span>
+  </li>
+  <% else %>
+  <li class="nav-item">
+    <p class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"><%= link_to 'Watchlist', user_movies_path %></p>
+  </li>
+  <% end %>
+</ul>
+
+
+    <div class="container bdy">
+
+        <%= yield %>
+    </div>
   </body>
 </html>
